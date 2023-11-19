@@ -11,3 +11,10 @@ M.x = Var(M.ITEMS, domain=Binary)
 
 M.value = Objective(expr=sum(value[i]*M.x[i] for i in M.ITEMS),sense=maximize)
 M.weight = Constraint(expr=sum(weight[i]*M.x[i] for i in M.ITEMS) <=Capacity)
+
+solver = SolverFactory('glpk', executable='/usr/bin/glpsol')
+solver.solve(M)
+
+for i in value.keys():
+    print('  ', i, ':', M.x[i]())
+print("objective:",M.value())
