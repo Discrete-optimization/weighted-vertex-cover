@@ -9,3 +9,6 @@ model = ConcreteModel()
 
 # define variable
 model.x = Var( nodes, within=Binary )
+
+# define constraint
+model.value = Objective(expr = sum(model.x[i] for i in nodes), sense=minimize)
