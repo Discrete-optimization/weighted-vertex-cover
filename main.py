@@ -7,5 +7,7 @@ Capacity = 106
 M = ConcreteModel()
 
 M.ITEMS = Set(initialize=value.keys())
-
 M.x = Var(M.ITEMS, domain=Binary)
+
+M.value = Objective(expr=sum(value[i]*M.x[i] for i in M.ITEMS),sense=maximize)
+M.weight = Constraint(expr=sum(weight[i]*M.x[i] for i in M.ITEMS) <=Capacity)
