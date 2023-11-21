@@ -29,3 +29,10 @@ nx.draw_networkx_labels(G, pos, font_size=20, font_family="sans-serif")
 # edge weight labels
 edge_labels = nx.get_edge_attributes(G, "weight")
 nx.draw_networkx_edge_labels(G, pos, edge_labels)
+
+
+ax = plt.gca()
+ax.margins(0.08)
+plt.axis("off")
+plt.tight_layout()
+print(plt.show())
