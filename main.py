@@ -8,7 +8,7 @@ model = ConcreteModel()
 
 
 # define variable
-model.x = Var( nodes, within=Binary )
+model.x = Var( nodes, within=Binary)
 
 # define constraint
 model.value = Objective(expr = sum(model.x[i] for i in nodes), sense=minimize)
@@ -17,3 +17,7 @@ model.value = Objective(expr = sum(model.x[i] for i in nodes), sense=minimize)
 model.constraints = ConstraintList()
 for (i, j) in graph:
     model.constraints.add(model.x[i] + model.x[j] >= 1)
+
+# solving model
+solver = SolverFactory('glpk')
+solver.solve(model)
