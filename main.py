@@ -21,3 +21,7 @@ for (i, j) in graph:
 # solving model
 solver = SolverFactory('glpk')
 solver.solve(model)
+
+# test answer
+for i in nodes:
+    print(i, model.x[i]())
