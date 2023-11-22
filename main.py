@@ -9,9 +9,9 @@ g = erdos_renyi_graph(n, p)
 print(g.nodes)
 print(g.edges)
 
-nodes = ['A', 'B', 'C', 'D', 'E', 'F']
-weight = [1, 555, 1, 597, 5546, 1]
-graph = [('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'F')]
+nodes = g.nodes
+weight = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+graph = g.edges
 
 # build concrete model with data specified
 model = ConcreteModel()
