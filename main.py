@@ -1,7 +1,8 @@
 from pyomo.environ import *
 
-nodes = ['A', 'B', 'C', 'D', 'E']
-graph = [('A', 'C'), ('B', 'C'), ('B', 'D'), ('D', 'E')]
+nodes = ['A', 'B', 'C', 'D', 'E', 'F']
+weight = [5, 5, 5, 5, 5, 5]
+graph = [('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'F')]
 
 # build concrete model with data specified
 model = ConcreteModel()
@@ -24,4 +25,7 @@ solver.solve(model)
 
 # test answer
 for i in nodes:
+    total = sum(model.x[j]() * weight[j.index(j)] for j in nodes)
     print(i, model.x[i]())
+
+print("Total answe: {}".format(total))
