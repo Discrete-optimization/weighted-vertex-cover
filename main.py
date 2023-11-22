@@ -1,7 +1,7 @@
 from pyomo.environ import *
 
 nodes = ['A', 'B', 'C', 'D', 'E', 'F']
-weight = [5, 5, 5, 5, 5, 5]
+weight = [1, 555, 1, 597, 5546, 1]
 graph = [('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'F')]
 
 # build concrete model with data specified
