@@ -1,4 +1,13 @@
 from pyomo.environ import *
+from networkx.generators.random_graphs import erdos_renyi_graph
+
+
+n = 10
+p = 0.5
+g = erdos_renyi_graph(n, p)
+
+print(g.nodes)
+print(g.edges)
 
 nodes = ['A', 'B', 'C', 'D', 'E', 'F']
 weight = [1, 555, 1, 597, 5546, 1]
