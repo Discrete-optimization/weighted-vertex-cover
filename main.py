@@ -27,11 +27,9 @@ model.value = Objective(expr = sum(model.x[i] for i in nodes), sense=minimize)
 model.constraints = ConstraintList()
 for (i, j) in graph:
     model.constraints.add(model.x[i] + model.x[j] >= 1)
-
 # solving model
 solver = SolverFactory('glpk')
 solver.solve(model)
-
 # test answer
 for i in nodes:
     total = sum(model.x[j]() * weight[j.index(j)] for j in nodes)
