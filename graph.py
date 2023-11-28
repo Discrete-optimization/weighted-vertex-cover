@@ -26,7 +26,7 @@ def gnp_random_connected_graph(n, p):
 
 
 probability = 0.1
-G = gnp_random_connected_graph(10,0.5)
+G = gnp_random_connected_graph(100,0.01)
 
 print(G.nodes)
 
