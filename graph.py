@@ -20,6 +20,14 @@ def node_genarator(length):
 
     return curr_edge
 
+def edge_genarator(nodes, length):
+    edge = []
+    for counter in range (0, length):
+        curr_edge = [random.choice(nodes), random.choice(nodes)]
+        edge.append(curr_edge)
+
+    return edge
+
 def gnp_random_connected_graph(n, p):
     """
     Generates a random undirected graph, similarly to an Erdős-Rényi
@@ -46,23 +54,21 @@ probability = 0.1
 G = nx.Graph()
 nodes = node_genarator(10)
 print(nodes)
+edges = edge_genarator(nodes, 20)
+print(edges)
 
 
 #G = nx.erdos_renyi_graph(100, 0.1)
-G = nx.fast_gnp_random_graph(55, 0.1, seed=None, directed=False)
+#G = nx.fast_gnp_random_graph(55, 0.1, seed=None, directed=False)
 #G = gnp_random_connected_graph(100,0.01)
+G.add_edges_from(edges)
 
 print(get_random_lable(3))
 color_map = []
-for node in G.nodes:
-    if node < 50:
-        color_map.append('blue')
-    else:
-        color_map.append('green')
 
 plt.figure(figsize=(16,10))
-nx.draw(G, node_color=color_map,
+nx.draw(G, node_color='blue',
         with_labels=True,
         node_size=500)
 
-#plt.show()
+plt.show()
