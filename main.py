@@ -1,17 +1,9 @@
 from pyomo.environ import *
 from networkx.generators.random_graphs import erdos_renyi_graph
 
-
-n = 10
-p = 0.5
-g = erdos_renyi_graph(n, p)
-
-print(g.nodes)
-print(g.edges)
-
-nodes = g.nodes
+nodes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
 weight = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-graph = g.edges
+graph = [("A", "B"), ("B", "C"), ("C", "D"), ("D", "E"), ("E", "F"), ("F", "G"), ("G", "H"), ("H", "I"), ("I", "J")]
 
 # build concrete model with data specified
 model = ConcreteModel()
@@ -31,7 +23,7 @@ for (i, j) in graph:
 # solving model
 solver = SolverFactory('glpk')
 solver.solve(model)
-test
+
 # test answer
 for i in nodes:
     total = sum(model.x[j]() * weight[j.index(j)] for j in nodes)
