@@ -29,7 +29,10 @@ probability = 0.1
 G = gnp_random_connected_graph(499,0.001)
 
 node_list = G.nodes
-print(node_list)
+counter = 0
+for i in node_list:
+    counter += 1
+print(counter)
 print(G.edges)
 
 plt.figure(figsize=(16,10))
