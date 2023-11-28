@@ -26,11 +26,11 @@ def gnp_random_connected_graph(n, p):
 
 
 probability = 0.1
-G = gnp_random_connected_graph(100,0.01)
+G = gnp_random_connected_graph(200,0.01)
 
 print(G.nodes)
 
-plt.figure(figsize=(8,5))
+plt.figure(figsize=(16,10))
 nx.draw(G, node_color='lightblue',
         with_labels=True,
         node_size=500)
