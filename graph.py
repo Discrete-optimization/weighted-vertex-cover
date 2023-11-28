@@ -5,11 +5,20 @@ import random
 import string
 
 
-def get_random_string(length):
+def get_random_lable(length):
     # choose from all lowercase letter
     letters = string.ascii_lowercase
     result_str = ''.join(random.choice(letters) for i in range(length))
     return(result_str)
+
+def node_genarator(length):
+    curr_edge = []
+    while(len(curr_edge) < length):
+        node = get_random_lable(3)
+        if node not in curr_edge:
+            curr_edge.append(node)
+
+    return curr_edge
 
 def gnp_random_connected_graph(n, p):
     """
@@ -35,14 +44,15 @@ def gnp_random_connected_graph(n, p):
 
 probability = 0.1
 G = nx.Graph()
-edges = [(1, 2), (2, 3)]
-print(len(edges))
+nodes = node_genarator(10)
+print(nodes)
+
 
 #G = nx.erdos_renyi_graph(100, 0.1)
 G = nx.fast_gnp_random_graph(55, 0.1, seed=None, directed=False)
 #G = gnp_random_connected_graph(100,0.01)
 
-print(get_random_string(3))
+print(get_random_lable(3))
 color_map = []
 for node in G.nodes:
     if node < 50:
