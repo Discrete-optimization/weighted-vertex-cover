@@ -5,6 +5,7 @@ import random
 import string
 
 
+
 def get_random_lable(length):
     # choose from all lowercase letter
     letters = string.ascii_lowercase
@@ -50,11 +51,12 @@ def gnp_random_connected_graph(n, p):
     return G
 
 
-probability = 0.1
+number_of_nodes = 15
+number_of_edges = 45
 G = nx.Graph()
-nodes = node_genarator(10)
+nodes = node_genarator(number_of_nodes)
 print(nodes)
-edges = edge_genarator(nodes, 20)
+edges = edge_genarator(nodes, number_of_edges)
 print(edges)
 
 
@@ -62,9 +64,6 @@ print(edges)
 #G = nx.fast_gnp_random_graph(55, 0.1, seed=None, directed=False)
 #G = gnp_random_connected_graph(100,0.01)
 G.add_edges_from(edges)
-
-print(get_random_lable(3))
-color_map = []
 
 """curr_lable = []
 for ed in edges:
