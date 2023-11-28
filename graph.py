@@ -26,12 +26,15 @@ def gnp_random_connected_graph(n, p):
 
 
 probability = 0.1
-G = nx.erdos_renyi_graph(20, 0.1)
+G = nx.Graph()
+
+#G = nx.erdos_renyi_graph(100, 0.1)
+G = nx.fast_gnp_random_graph(100, 0.1, seed=None, directed=False)
 #G = gnp_random_connected_graph(100,0.01)
 
 node_list = G.nodes
 
-print(G.nodes)
+print(type(node_list))
 print(G.edges)
 color_map = []
 for node in node_list:
