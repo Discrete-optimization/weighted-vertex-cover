@@ -26,16 +26,22 @@ def gnp_random_connected_graph(n, p):
 
 
 probability = 0.1
-G = gnp_random_connected_graph(100,0.01)
+G = nx.erdos_renyi_graph(20, 0.1)
+#G = gnp_random_connected_graph(100,0.01)
 
 node_list = G.nodes
 
-print(node_list)
+print(G.nodes)
 print(G.edges)
-
+color_map = []
+for node in node_list:
+    if node < 50:
+        color_map.append('blue')
+    else:
+        color_map.append('green')
 
 plt.figure(figsize=(16,10))
-nx.draw(G, node_color='lightblue',
+nx.draw(G, node_color=color_map,
         with_labels=True,
         node_size=500)
 
