@@ -1,37 +1,38 @@
 import matplotlib.pyplot as plt
+from itertools import combinations, groupby
 import networkx as nx
+import random
 
-G = nx.Graph()
+def gnp_random_connected_graph(n, p):
+    """
+    Generates a random undirected graph, similarly to an Erdős-Rényi
+    graph, but enforcing that the resulting graph is conneted
+    """
+    edges = combinations(range(n), 2)
+    G = nx.Graph()
+    G.add_nodes_from(range(n))
+    if p <= 0:
+        return G
+    if p >= 1:
+        return nx.complete_graph(n, create_using=G)
+    for _, node_edges in groupby(edges, key=lambda x: x[0]):
+        node_edges = list(node_edges)
+        random_edge = random.choice(node_edges)
+        G.add_edge(*random_edge)
+        for e in node_edges:
+            if random.random() < p:
+                G.add_edge(*e)
+    return G
 
-G.add_edge("a", "b", weight=0.6)
-G.add_edge("a", "c", weight=0.2)
-G.add_edge("c", "d", weight=0.1)
-G.add_edge("c", "e", weight=0.7)
-G.add_edge("c", "f", weight=0.9)
-G.add_edge("a", "d", weight=0.3)
 
-elarge = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] > 0.5]
-esmall = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] <= 0.5]
+probability = 0.1
+G = gnp_random_connected_graph(10,0.5)
 
-pos = nx.spring_layout(G, seed=7)  # positions for all nodes - seed for reproducibility
+print(G.nodes)
 
-# nodes
-nx.draw_networkx_nodes(G, pos, node_size=700)
+plt.figure(figsize=(8,5))
+nx.draw(G, node_color='lightblue',
+        with_labels=True,
+        node_size=500)
 
-# edges
-nx.draw_networkx_edges(G, pos, edgelist=elarge, width=6)
-nx.draw_networkx_edges(
-    G, pos, edgelist=esmall, width=6, alpha=0.5, edge_color="b", style="dashed"
-)
-
-# node labels
-nx.draw_networkx_labels(G, pos, font_size=20, font_family="sans-serif")
-# edge weight labels
-edge_labels = nx.get_edge_attributes(G, "weight")
-nx.draw_networkx_edge_labels(G, pos, edge_labels)
-
-ax = plt.gca()
-ax.margins(0.08)
-plt.axis("off")
-plt.tight_layout()
-plt.savefig('graph.png')
+plt.show()
