@@ -66,9 +66,22 @@ G.add_edges_from(edges)
 print(get_random_lable(3))
 color_map = []
 
+"""curr_lable = []
+for ed in edges:
+    l = {(ed[0], ed[1]): '1'}
+    curr_lable.append(l)
+
+print(curr_lable)"""
+
 plt.figure(figsize=(16,10))
 nx.draw(G, node_color='blue',
         with_labels=True,
-        node_size=500)
-
+        node_size=500,
+        font_color='red'
+        )
+"""
+edge_labels={('A', 'B'): 'AB',
+             ('B', 'C'): 'BC',
+             ('B', 'D'): 'BD'},
+"""
 plt.show()
