@@ -77,7 +77,7 @@ plt.figure(figsize=(16,10))
 nx.draw(G, node_color='blue',
         with_labels=True,
         node_size=500,
-        font_color='red'
+        font_color='white'
         )
 """
 edge_labels={('A', 'B'): 'AB',
