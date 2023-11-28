@@ -28,7 +28,8 @@ def gnp_random_connected_graph(n, p):
 probability = 0.1
 G = gnp_random_connected_graph(499,0.001)
 
-print(G.nodes)
+node_list = G.nodes
+print(node_list)
 print(G.edges)
 
 plt.figure(figsize=(16,10))
@@ -36,4 +37,4 @@ nx.draw(G, node_color='lightblue',
         with_labels=True,
         node_size=500)
 
-plt.show()
+#plt.show()
