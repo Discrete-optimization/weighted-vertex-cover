@@ -10,7 +10,7 @@ def gnp_random_connected_graph(n, p):
     """
     edges = combinations(range(n), 2)
     G = nx.Graph()
-    G.add_nodes_from(range(n))
+    G.add_node(range(n), weight=2)
     if p <= 0:
         return G
     if p >= 1:
@@ -26,17 +26,13 @@ def gnp_random_connected_graph(n, p):
 
 
 probability = 0.1
-G = gnp_random_connected_graph(499,0.001)
+G = gnp_random_connected_graph(10,0.1)
 
 node_list = G.nodes
 
-print(len(node_list))
+print(node_list)
 print(G.edges)
 
-a = 2
-print(type(a))
-a = str(a)
-print(type(a))
 
 plt.figure(figsize=(16,10))
 nx.draw(G, node_color='lightblue',
