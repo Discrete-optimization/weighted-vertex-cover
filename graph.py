@@ -33,6 +33,11 @@ node_list = G.nodes
 print(len(node_list))
 print(G.edges)
 
+a = 2
+print(type(a))
+a = str(a)
+print(type(a))
+
 plt.figure(figsize=(16,10))
 nx.draw(G, node_color='lightblue',
         with_labels=True,
