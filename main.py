@@ -2,13 +2,14 @@ from pyomo.environ import *
 from graph import Graph
 
 
-number_of_nodes = 5
-number_of_edges = 15
+number_of_nodes = 8
+number_of_edges = 16
 
 G1 = Graph(number_of_nodes, number_of_edges)
 
 G1.node_genarator()
 G1.edge_genarator()
+G1.remove_tube()
 nodes = G1.get_nodes()
 graph = G1.get_edeges()
 
