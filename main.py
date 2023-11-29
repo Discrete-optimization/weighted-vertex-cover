@@ -32,10 +32,9 @@ resualt_list = []
 for i in nodes:
     total = sum(model.x[j]() for j in nodes)
     print(i, model.x[i]())
-    if(model.x[i]() == 1):
-        print("hi")
+    resualt_list.append([i, model.x[i]()])
 
 print("Total answe: {}".format(total))
-
+print(resualt_list)
 G = G1.construct()
 G1.plot(G, color_map)
