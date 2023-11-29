@@ -27,14 +27,13 @@ solver = SolverFactory('glpk')
 solver.solve(model)
 
 # test answer
-color_map = []
+color_map = 'red'
+resualt_list = []
 for i in nodes:
     total = sum(model.x[j]() for j in nodes)
     print(i, model.x[i]())
-    if(model.x[i]() > 0):
-        color_map.append("red")
-    else:
-        color_map.append("blue")
+    if(model.x[i]() == 1):
+        print("hi")
 
 print("Total answe: {}".format(total))
 
