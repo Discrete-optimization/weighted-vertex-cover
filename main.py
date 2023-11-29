@@ -3,7 +3,7 @@ from graph import Graph
 
 
 number_of_nodes = 5
-number_of_edges = 15
+number_of_edges = 8
 
 G1 = Graph(number_of_nodes, number_of_edges)
 
@@ -35,11 +35,16 @@ solver = SolverFactory('glpk')
 solver.solve(model)
 
 # test answer
+color_map = []
 for i in nodes:
     total = sum(model.x[j]() * weight[j.index(j)] for j in nodes)
     print(i, model.x[i]())
+    if(model.x[i]() == 1):
+        color_map.append("red")
+    else:
+        color_map.append("blue")
 
 print("Total answe: {}".format(total))
 
 G = G1.construct()
-G1.plot(G)
+G1.plot(G, color_map)

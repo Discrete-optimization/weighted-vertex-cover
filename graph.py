@@ -45,9 +45,9 @@ class Graph:
         G.add_edges_from(self.edge)
         return G
 
-    def plot(self, G):
+    def plot(self, G, color_map):
         plt.figure(figsize=(16, 10))
-        nx.draw(G, node_color='blue',
+        nx.draw(G, node_color=color_map,
                 with_labels=True,
                 node_size=500,
                 font_color='white'
