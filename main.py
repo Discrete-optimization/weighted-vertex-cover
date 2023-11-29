@@ -27,7 +27,7 @@ solver = SolverFactory('glpk')
 solver.solve(model)
 
 # test answer
-color_map = 'red'
+color_map = []
 resualt_list = []
 for i in nodes:
     total = sum(model.x[j]() for j in nodes)
@@ -36,5 +36,15 @@ for i in nodes:
 
 print("Total answe: {}".format(total))
 print(resualt_list)
+
 G = G1.construct()
+for g in G:
+    for i in nodes:
+        if(g==i):
+            if(model.x[i]() == 1):
+                color_map.append('red')
+            else:
+                color_map.append('blue')
+
+
 G1.plot(G, color_map)
