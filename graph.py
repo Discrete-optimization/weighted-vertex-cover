@@ -70,3 +70,6 @@ print(G1.get_edeges())
 G1.edge_genarator()
 print(G1.get_edeges())
 
+G = G1.construct()
+G1.plot(G)
+
