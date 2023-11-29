@@ -56,4 +56,7 @@ class Graph:
 
 
 
+number_of_nodes = 15
+number_of_edges = 45
 
+G1 = Graph(number_of_nodes, number_of_edges)
