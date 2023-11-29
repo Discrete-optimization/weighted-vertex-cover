@@ -3,16 +3,14 @@ from graph import Graph
 
 
 number_of_nodes = 5
-number_of_edges = 8
+number_of_edges = 15
 
 G1 = Graph(number_of_nodes, number_of_edges)
 
 G1.node_genarator()
 G1.edge_genarator()
 
-
 nodes = G1.get_nodes()
-weight = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 graph = G1.get_edeges()
 
 # build concrete model with data specified
@@ -37,7 +35,7 @@ solver.solve(model)
 # test answer
 color_map = []
 for i in nodes:
-    total = sum(model.x[j]() * weight[j.index(j)] for j in nodes)
+    total = sum(model.x[j]() for j in nodes)
     print(i, model.x[i]())
     if(model.x[i]() == 1):
         color_map.append("red")

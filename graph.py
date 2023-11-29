@@ -40,6 +40,11 @@ class Graph:
 
         self.edge = edge
 
+    def remove_tube(self):
+        for e in self.edge:
+            if(e[0] == e[1]):
+                self.edge.remove(e)
+
     def construct(self):
         G = nx.Graph()
         G.add_edges_from(self.edge)
