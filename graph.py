@@ -55,7 +55,7 @@ class Graph:
         nx.draw(G, node_color=color_map,
                 with_labels=True,
                 node_size=500,
-                font_color='white'
+                font_color='black'
                 )
 
         plt.show()
