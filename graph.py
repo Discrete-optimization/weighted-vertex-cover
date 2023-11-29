@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from itertools import combinations, groupby
 import networkx as nx
 import random
 import string
