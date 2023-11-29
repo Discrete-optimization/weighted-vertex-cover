@@ -2,8 +2,8 @@ from pyomo.environ import *
 from graph import Graph
 
 
-number_of_nodes = 10
-number_of_edges = 15
+number_of_nodes = 100
+number_of_edges = 150
 
 G1 = Graph(number_of_nodes, number_of_edges)
 
@@ -44,9 +44,9 @@ for g in G:
     for i in nodes:
         if(g==i):
             if(model.x[i]() == 1):
-                color_map.append('gray')
+                color_map.append('yellow')
             else:
-                color_map.append('white')
+                color_map.append('gray')
 
 
 G1.plot(G, color_map)
