@@ -56,20 +56,3 @@ class Graph:
         plt.show()
 
 
-
-
-number_of_nodes = 15
-number_of_edges = 45
-
-G1 = Graph(number_of_nodes, number_of_edges)
-print(G1.get_nodes())
-G1.node_genarator()
-print(G1.get_nodes())
-
-print(G1.get_edeges())
-G1.edge_genarator()
-print(G1.get_edeges())
-
-G = G1.construct()
-G1.plot(G)
-
