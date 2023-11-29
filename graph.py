@@ -32,9 +32,9 @@ class Graph:
 
         self.nodes = curr_node
 
-    def edge_genarator(self, length):
+    def edge_genarator(self):
         edge = []
-        for counter in range(0, length):
+        for counter in range(0, self.edge_num):
             curr_edge = [random.choice(self.nodes), random.choice(self.nodes)]
             edge.append(curr_edge)
 
@@ -65,4 +65,8 @@ G1 = Graph(number_of_nodes, number_of_edges)
 print(G1.get_nodes())
 G1.node_genarator()
 print(G1.get_nodes())
+
+print(G1.get_edeges())
+G1.edge_genarator()
+print(G1.get_edeges())
 
