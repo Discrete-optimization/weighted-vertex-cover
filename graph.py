@@ -5,10 +5,12 @@ import random
 import string
 
 class Graph:
-    def __init__(self, nodes, edges):
+    def __init__(self, nodes_num, edges_num):
         print("Graph constructor is called!")
-        self.nodes = nodes
-        self.edge = edges
+        self.nodes_num = nodes_num
+        self.edge_num = edges_num
+        self.nodes = []
+        self.edge = []
 
     def get_nodes(self):
         return self.nodes
@@ -21,9 +23,9 @@ class Graph:
         result_str = ''.join(random.choice(letters) for i in range(length))
         return (result_str)
 
-    def node_genarator(self, length):
+    def node_genarator(self):
         curr_node = []
-        while (len(curr_node) < length):
+        while (len(curr_node) < self.nodes_num):
             node = self.get_random_lable(3)
             if node not in curr_node:
                 curr_node.append(node)
@@ -60,3 +62,7 @@ number_of_nodes = 15
 number_of_edges = 45
 
 G1 = Graph(number_of_nodes, number_of_edges)
+print(G1.get_nodes())
+G1.node_genarator()
+print(G1.get_nodes())
+
