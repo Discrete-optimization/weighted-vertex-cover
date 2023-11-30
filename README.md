@@ -8,4 +8,4 @@ $\forall$ (i, j) xi + xj >= 1
 
 - [x] phase1
 - [x] phase2
-- [] phase3
+- [ ] phase3
