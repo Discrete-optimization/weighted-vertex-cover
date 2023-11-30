@@ -1,8 +1,8 @@
 from pyomo.environ import *
 from graph import Graph
 
-number_of_nodes = 100
-number_of_edges = 150
+number_of_nodes = 200
+number_of_edges = 300
 
 G1 = Graph(number_of_nodes, number_of_edges)
 
