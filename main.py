@@ -1,8 +1,8 @@
 from model import Model
 from graph import Graph
 
-number_of_nodes = 100
-number_of_edges = 150
+number_of_nodes = 1000
+number_of_edges = 400
 
 G1 = Graph(number_of_nodes, number_of_edges)
 
