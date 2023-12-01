@@ -9,12 +9,16 @@ class Graph:
         self.nodes_num = nodes_num
         self.edge_num = edges_num
         self.nodes = []
+        self.weigth = []
         self.edge = []
 
     def get_nodes(self):
         return self.nodes
     def get_edeges(self):
         return self.edge
+
+    def get_weigth(self):
+        return self.weigth
 
     def get_random_lable(sef, length):
         # choose from all lowercase letter
@@ -30,6 +34,14 @@ class Graph:
                 curr_node.append(node)
 
         self.nodes = curr_node
+
+    def weigth_genarator(self):
+        weigth_list = []
+        while (len(weigth_list) < self.nodes_num):
+            weigth = random.randint(1, 10)
+            weigth_list.append(weigth)
+
+        self.weigth = weigth
 
     def edge_genarator(self):
         edge = []

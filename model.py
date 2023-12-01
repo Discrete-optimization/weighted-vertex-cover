@@ -2,9 +2,10 @@ from pyomo.environ import *
 
 class Model:
 
-    def __init__(self, nodes, graph):
+    def __init__(self, nodes, graph, weigth):
         print("model constructor is called!")
         self.nodes = nodes
+        self.weigth = weigth
         self.graph = graph
         # build concrete model with data specified
         self.model = ConcreteModel()

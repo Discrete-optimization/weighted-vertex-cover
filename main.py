@@ -9,15 +9,17 @@ number_of_edges = 25
 G1 = Graph(number_of_nodes, number_of_edges)
 
 G1.node_genarator()#generate random nodes ["A", "B", "C", "D"]
+G1.weigth_genarator()#generate random weigth between 1 to 10 [1, 5, 3, 9]
 G1.edge_genarator()#denerate random edge between ndes [("A", "B"), ("A", "C"), ("A", "D")]
 G1.remove_tube()#using this function is optional. Removes tubes. [("A", "B"), ("C", "C")] -> [("A", "B")]
 
 #set nodes and graph with nodes an edges:
 nodes = G1.get_nodes()
+weigth = G1.get_weigth()
 graph = G1.get_edeges()
 
 #call pyomo create and solve modle:
-m1 = Model(nodes, graph)
+m1 = Model(nodes, graph, weigth)
 m1.monitoring()
 
 #using this function is optional.
