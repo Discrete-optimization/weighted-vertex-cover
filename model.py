@@ -11,6 +11,9 @@ class Model:
         # define variable
         self.model.x = Var(nodes, within=Binary)
 
+    def get_model(self):
+        return self.model
+
     def constraint(self):
         # define constraint
         self.model.value = Objective(expr=sum(self.model.x[i] for i in self.nodes), sense=minimize)

@@ -49,7 +49,21 @@ class Graph:
         G.add_edges_from(self.edge)
         return G
 
-    def plot(self, G, color_map):
+    def color_map(self, model):
+        color_map = []
+        G = self.construct()
+        for g in G:
+            for i in self.nodes:
+                if (g == i):
+                    if (model.x[i]() == 1):
+                        color_map.append('yellow')
+                    else:
+                        color_map.append('gray')
+
+        return color_map
+
+    def plot(self, G, model):
+        color_map = self.color_map(model)
         plt.figure(figsize=(16, 10))
         nx.draw(G, node_color=color_map,
                 with_labels=True,
