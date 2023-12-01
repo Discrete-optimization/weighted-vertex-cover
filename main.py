@@ -1,19 +1,24 @@
 from model import Model
 from graph import Graph
 
-number_of_nodes = 1000
-number_of_edges = 400
+
+#Enter the number of nodes and edges you want:
+number_of_nodes = 20
+number_of_edges = 25
 
 G1 = Graph(number_of_nodes, number_of_edges)
 
-G1.node_genarator()
-G1.edge_genarator()
-G1.remove_tube()
+G1.node_genarator()#generate random nodes ["A", "B", "C", "D"]
+G1.edge_genarator()#denerate random edge between ndes [("A", "B"), ("A", "C"), ("A", "D")]
+G1.remove_tube()#using this function is optional. Removes tubes. [("A", "B"), ("C", "C")] -> [("A", "B")]
 
+#set nodes and graph with nodes an edges:
 nodes = G1.get_nodes()
 graph = G1.get_edeges()
 
+#call pyomo create and solve modle:
 m1 = Model(nodes, graph)
 m1.monitoring()
 
+#using this function is optional.
 G1.plot(G1.construct(), m1.get_model())
