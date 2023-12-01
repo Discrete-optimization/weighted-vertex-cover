@@ -2,7 +2,7 @@ from model import Model
 from graph import Graph
 
 number_of_nodes = 5
-number_of_edges = 15
+number_of_edges = 10
 
 G1 = Graph(number_of_nodes, number_of_edges)
 
