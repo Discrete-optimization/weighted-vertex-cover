@@ -6,6 +6,7 @@ from graph import Graph
 number_of_nodes = 20
 number_of_edges = 25
 
+#construct a graph:
 G1 = Graph(number_of_nodes, number_of_edges)
 
 G1.node_genarator()#generate random nodes ["A", "B", "C", "D"]
