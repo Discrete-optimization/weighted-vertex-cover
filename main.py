@@ -13,11 +13,11 @@ G1.remove_tube()
 nodes = G1.get_nodes()
 graph = G1.get_edeges()"""
 
+nodes = ["A", "B", "C", "D"]
+graph = [("A","B"), ("A","C"), ("A","D")]
 
-
-
-
-# test answer
+m1 = Model(nodes, graph)
+m1.monitoring()
 
 
 

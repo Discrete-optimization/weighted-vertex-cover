@@ -2,7 +2,8 @@ from pyomo.environ import *
 
 class Model:
 
-    def __int__(self, nodes, graph):
+    def __init__(self, nodes, graph):
+        print("model constructor is called!")
         self.nodes = nodes
         self.graph = graph
         # build concrete model with data specified
@@ -19,6 +20,7 @@ class Model:
             self.model.constraints.add(self.model.x[i] + self.model.x[j] >= 1)
 
     def solver(self):
+        self.constraint()
         # solving model
         solver = SolverFactory('glpk')
         solver.solve(self.model)
