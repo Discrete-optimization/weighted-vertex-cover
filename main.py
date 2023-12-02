@@ -1,3 +1,10 @@
+"""
+Decemer 2023
+you can also see this project on our team's github organization
+https://github.com/Discrete-optimization/weighted-vertex-cover
+"""
+
+
 from model import Model
 from graph import Graph
 
