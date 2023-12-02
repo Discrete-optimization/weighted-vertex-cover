@@ -1,3 +1,7 @@
+<p>
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Discrete-optimization/weighted-vertex-cover">
+</p>
+
 # weighted vertex cover
 
 min $\sum$	xi wi
