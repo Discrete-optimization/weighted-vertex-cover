@@ -2,39 +2,23 @@
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Discrete-optimization/weighted-vertex-cover">
 </p>
 
-# weighted vertex cover
+# weighted nodes cover
 
-min $\sum$	xi wi
-
-$\forall$ (i, j) xi + xj >= 1
+This project discusses the graph covering problem in which a set of edges in an edge- and node-weighted graph is chosen to satisfy some covering constraints while minimizing the sum of the weights. In this problem, because of the large integrality gap of a naive linear programming (LP) relaxation, LP rounding algorithms based on the relaxation yield poor performance. Here we propose a stronger LP relaxation for the graph covering problem. The proposed relaxation is applied to designing primal–dual algorithms for two fundamental graph covering problems: the prize-collecting edge dominating set problem and the multicut problem in trees. Our algorithms are an exact polynomial-time algorithm for the former problem, and a 2-approximation algorithm for the latter problem. These results match the currently known best results for purely edge-weighted graphs.
 
 ## TODO
 
-- [x] phase1
-- [x] phase2
-- [ ] phase3
+- [x] phase1: Implement the Int model for the node covering problem in pyomo software and run it on different graphs.
+- [x] phase2: Implement the approximate algorithm program for the node coverage example in pyomo (hint: take a graph with its weights and implement its linear programming model to reach an initial solution and... use graph packages and Compare the approximate algorithm with the int model on large size graphs up to 10,000 nodes.
+- [x] phase3: Show that in the relax model, for the node covering problem, the upper limit for the variables (=>1) is not necessary.
 
 
-## Req
+## Requirements
+````
+pip install -r requirements.txt
+````
 
-Pillow	10.1.0	
-PyQt5	5.15.10	
-PyQt5-Qt5	5.15.2	
-PyQt5-sip	12.13.0	
-Pyomo	6.6.2	
-contourpy	1.2.0	
-cycler	0.12.1	
-fonttools	4.45.0	
-glpk	0.4.7	
-kiwisolver	1.4.5	
-matplotlib	3.8.2	
-networkx	3.2.1	
-numpy	1.26.2	
-packaging	23.2	
-pip	23.2.1	
-ply	3.11	
-pyparsing	3.1.1	
-python-dateutil	2.8.2	
-setuptools	68.2.2	
-six	1.16.0	
-wheel	0.41.2	
+## How to run?
+````
+python3 main.py
+````
