@@ -80,9 +80,9 @@ class Graph:
             for i in self.nodes:
                 if (g == i):
                     if (model.x[i]() == 1):
-                        color_map.append('yellow')
+                        color_map.append('yellow')#Selected
                     else:
-                        color_map.append('gray')
+                        color_map.append('gray')# not Selected
 
         return color_map
 
