@@ -51,6 +51,18 @@ class Graph:
 
         self.edge = edge
 
+    #Nodes are not made randomly and the user specifies them
+    def set_special_nodes(self, nodes):
+        self.nodes = nodes
+
+    # weigth are not made randomly and the user specifies them
+    def set_special_weigth(self, weigth):
+        self.weigth = weigth
+
+    #The graph is not made randomly and the user specifies it
+    def set_special_graph(self, edge):
+        self.edge = edge
+
     def remove_tube(self):
         for e in self.edge:
             if(e[0] == e[1]):
