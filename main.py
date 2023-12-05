@@ -8,8 +8,8 @@ from graph import Graph
 
 
 #Enter the number of nodes and edges you want:
-number_of_nodes = 200
-number_of_edges = 300
+number_of_nodes = 100
+number_of_edges = 150
 
 #construct a graph:
 G1 = Graph(number_of_nodes, number_of_edges)
